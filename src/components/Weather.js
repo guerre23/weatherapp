@@ -6,7 +6,9 @@ const Weather = ({tempCelsious, tempFarenheit, state, country, icon, description
             <div className='weather-content'>
                 <button onClick={() => setIsCelsuios(!isCelsious)}>{isCelsious ? tempCelsious : tempFarenheit}°</button>
                 <div>
-                    <h3>Click to the number<br/> to change to</h3>
+                    <br></br>
+                    <h3> Click in the number </h3>
+                    <br></br>
                     <h3>{isCelsious ? "Farenheit" : "Celsious"}</h3>
                 </div>
             </div>
