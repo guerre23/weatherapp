@@ -1,11 +1,10 @@
-import './Loading.css';
+import "./Loading.css";
 
-const Loading = () =>{
-    return(
-        <div class="sk-bounce">
-           <div class="sk-bounce-dot"></div>
-           <div class="sk-bounce-dot"></div>
-      </div>
-    )
-}   
-export default Loading
+const Loading = () => {
+  return (
+    <div class="container_loading">
+      <div class="lds-dual-ring"></div>
+    </div>
+  );
+};
+export default Loading;
