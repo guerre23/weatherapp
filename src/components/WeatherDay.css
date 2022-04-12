@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  color: rgb(230, 224, 224);
+}
+
+.weather-container{
+    width: 100vw; 
+    height: 100vh;
+    background-size: cover;
+    filter: grayscale(20%);
+    background-repeat: no-repeat;
+    background-image: url('http://www.publitours.com/images/images-rotador/madrededios/madrededios-1.jpg');
+} 
+
+@media (max-width: 768px){
+    .weather-container{
+        width: 0vw; 
+        height: 40vh;
+        background-size: cover;
+        filter: grayscale(20%);
+        background-repeat: no-repeat;
+        background-image: url();
+    }  
+
+    .header{
+        height: 70px;
+        width: 100%;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        background-color: rgba(10, 10, 10, 0.938);
+      }
+}

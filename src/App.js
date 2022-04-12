@@ -1,8 +1,11 @@
-import './App.css';
+/* import './App.css'; */
 import WeatherDay from './components/WeatherDay';
 function App() {
   return (
-    <div className="App">
+    
+    <div>
+      <div className='header'>
+      </div>
       <WeatherDay/>  
     </div>
   );

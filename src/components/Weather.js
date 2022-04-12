@@ -1,4 +1,6 @@
+import "./Weather.css"
 import { useState } from 'react'
+
 const Weather = ({tempCelsious, tempFarenheit, state, country, icon, description}) => {
     const [isCelsious, setIsCelsuios] = useState(true)
     return(
@@ -6,10 +8,8 @@ const Weather = ({tempCelsious, tempFarenheit, state, country, icon, description
             <div className='weather-content'>
                 <button onClick={() => setIsCelsuios(!isCelsious)}>{isCelsious ? tempCelsious : tempFarenheit}°</button>
                 <div>
-                    <br></br>
                     <h3> Click in the number </h3>
-                    <br></br>
-                    <h3>{isCelsious ? "Farenheit" : "Celsious"}</h3>
+                    <h3>{isCelsious ? "Farenheit" : "Celsious"}</h3> 
                 </div>
             </div>
             <div className='weather-location'>

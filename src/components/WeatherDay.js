@@ -3,9 +3,11 @@ import weatherApi from "./services/weatherApi";
 import Loading from "./Loading";
 import CurrenInfo from "./CurrenInfo";
 import Weather from "./Weather";
+import "./WeatherDay.css";
 import images from "../images.json";
 
 const WeatherDay = () => {
+
   //uso de state
 
   const [state, setState] = useState("");
@@ -26,30 +28,34 @@ const WeatherDay = () => {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
-      weatherApi(pos.coords.latitude, pos.coords.longitude).then((res) => {
-        setHasDataWeather(true);
-        setCloudy(res.data.current.cloud);
-        setHumidity(res.data.current.humidity);
-        setWind(res.data.current.wind_kph);
-        setRain(res.data.current.precip_mm);
-        setState(res.data.location.region);
-        setCountry(res.data.location.country);
-        setTempCelcious(res.data.current.temp_c);
-        setImg(images[res.data.current.condition.text].img);
-        setTempFarenheit(res.data.current.temp_f);
-        setIcon(res.data.current.condition.icon);
-        setDescription(res.data.current.condition.text);
-        setTimeout(() => {
-          setHasDataLocation(true);
-        }, 1000);
-      });
+    weatherApi(pos.coords.latitude, pos.coords.longitude).then((res) => {
+    setHasDataWeather(true);
+    setCloudy(res.data.current.cloud);
+    setHumidity(res.data.current.humidity);
+    setWind(res.data.current.wind_kph);
+    setRain(res.data.current.precip_mm);
+    setState(res.data.location.region);
+    setCountry(res.data.location.country);
+    setTempCelcious(res.data.current.temp_c);
+    setImg(images[res.data.current.condition.text].img);
+    setTempFarenheit(res.data.current.temp_f);
+    setIcon(res.data.current.condition.icon);
+    setDescription(res.data.current.condition.text);
+    setTimeout(() => {
+      setHasDataLocation(true);
+    }, 1000);
+  }); 
+
     });
   }, []);
+
   return (
     <div
       className="weather-container"
-      style={{ backgroundImage: `url(${img})` }}
     >
+      <div className="header">
+
+      </div>
       {hasDataLocation ? (
         <div>
           <Weather
